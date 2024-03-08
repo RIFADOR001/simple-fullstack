@@ -54,6 +54,7 @@ def update_contact(user_id):
     contact.last_name = data.get("lastName", contact.last_name)
     contact.email = data.get("email", contact.email)
 
+    # Since we already have the contact we don't need to add another instruction
     db.session.commit()
 
     return jsonify({"message": "User updated"}), 200
